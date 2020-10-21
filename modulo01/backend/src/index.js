@@ -9,7 +9,7 @@ app.use(express.json())
  * Métodos HTTP:
  * 
  * GET:  Buscar informações do backenb
- * POST: criar uma informação no backend
+ * POST: criar uma informação no backend 
  * PUT/PATCH: atualizar alguma informação no backend
  * DELETE: deletar alguma informação no backend
  */
