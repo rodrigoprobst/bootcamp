@@ -8,8 +8,14 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 </p>
 
-Projeto com todos os níveis do curso, separados por módulos/desafios em pastas
+## Organização do Projeto
 
-Cada vídeo aula vou fazer uma nova branch para que o histórico tenha fácil acesso. Após cada aula faço o merge na main
+Neste projeto, vou colocar todo o código fonte do curso. Mantendo como separação principal os módulos prestados.
 
+## Organização de Branchs
 
+Cada vídeo aula vou fazer uma nova branch para que tenha fácil acesso ao histórico. Após pull no branch, merge na main.
+
+## Os Desafios 
+
+Os desafios estarão dentro de seu respoectivo módulo com o nome do desafio no diretório.
