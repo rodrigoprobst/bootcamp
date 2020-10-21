@@ -16,6 +16,8 @@ Neste projeto, vou colocar todo o código fonte do curso. Mantendo como separaç
 
 Cada vídeo aula vou fazer uma nova branch para que tenha fácil acesso ao histórico. Após pull no branch, merge na main.
 
+A cada desafio concluído, vou criar uma nova tag para facilitar ainda mais o acesso ao código fonte em diferentes períodos de tempo
+
 ## Os Desafios 
 
 Os desafios estarão dentro de seu respoectivo módulo com o nome do desafio no diretório.
