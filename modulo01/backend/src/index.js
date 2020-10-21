@@ -1,34 +1,52 @@
 const express = require('express')
-const { v4: uuid } = require('uuid')
+const { uuidv4: uuid, validate: uuidValidate } = require('uuid')
 
 const app = express()
 
 app.use(express.json())
 
-/**
- * Métodos HTTP:
- * 
- * GET:  Buscar informações do backenb
- * POST: criar uma informação no backend 
- * PUT/PATCH: atualizar alguma informação no backend
- * DELETE: deletar alguma informação no backend
- */
-
- /**
-  * Tipos de Parâmetros:
-  * 
-  * Query Params: Filtros e paginação
-  * Route Params: Identificar recursos na hora de (atualizar/deletar) 
-  * Request body: Conteúdo na hora de criar ou editar um recurso (JSON)
-  */
-
 const projects = [];
+
+function logRequests(request, response, next) {
+  const { method, url } = request
+
+  const logLabel = `[${method.toUpperCase()}] ${url}`
+
+  console.time(logLabel);
+
+  const { query, body, params} = request
+
+  const log = {
+    query, 
+    body,
+    params
+  }
+
+  next() // Próximo middleware
+
+  console.timeEnd(logLabel);
+  console.log(log);
+}
+
+function validadeProjectId (request, response, next) {
+  const { id } = request.params
+
+  if (!uuidValidate(id)) {
+    // aqui interrompe
+    return response.status(400).json({ message: 'Invalid project ID'})
+  }
+  
+  return next()
+}
+
+app.use(logRequests)
+app.use('/projects/:id', validadeProjectId)
 
 app.get('/', (request, response) => {
   return response.json({message: 'Hello GoStack'})
 })
 
-app.get('/projects', (request, response) => {
+app.get('/projects', /*logRequests,*/ (request, response) => {
   const { title } = request.query
 
   const results = title
