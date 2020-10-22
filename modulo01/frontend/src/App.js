@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import Header from './Header'
+import Header from './components/Header'
+
+import './App.css'
+import backgroundImage from  './assets/img.jpg'
+
+
 
 export default function App () {
   const [ projects, setProjects] = useState([
@@ -22,6 +27,8 @@ export default function App () {
   return (
     <>
       <Header title="Projects" />
+
+      <img width={500} src={backgroundImage} />
       <ul>
         {projects.map(project => <li key={project}>{project}</li>)}
       </ul>
