@@ -3,7 +3,7 @@
 <p align="center">
   
   <img alt = "Última confirmação do Github" src="https://img.shields.io/github/last-commit/rodrigoprobst/bootcamp">
-  <img alt = "Idioma principal do GitHub" src="https://img.shields.io/github/languages/top/rodrigoprobst/bootcamp?color=%23EFD81B">
+  <img alt = "Idioma principal do GitHub" src="https://img.shields.io/github/languages/top/rodrigoprobst/bootcamp?logo=javascript">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/rodrigoprobst/bootcamp">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 </p>
