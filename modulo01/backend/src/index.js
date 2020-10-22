@@ -1,8 +1,11 @@
 const express = require('express')
-const { uuidv4: uuid, validate: uuidValidate } = require('uuid')
+const cors = require('cors')
+const { v4: uuid, validate: isUuid } = require('uuid')
+
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 const projects = [];
@@ -31,7 +34,7 @@ function logRequests(request, response, next) {
 function validadeProjectId (request, response, next) {
   const { id } = request.params
 
-  if (!uuidValidate(id)) {
+  if (!isUuid(id)) {
     // aqui interrompe
     return response.status(400).json({ message: 'Invalid project ID'})
   }

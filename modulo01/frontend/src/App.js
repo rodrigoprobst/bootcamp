@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
+import api from './services/api'
 
 import './App.css'
-import backgroundImage from  './assets/img.jpg'
-
-
 
 export default function App () {
-  const [ projects, setProjects] = useState([
-    'Desenvolvimento de App',
-    'Front-end Web'
-  ])
+  const [ projects, setProjects] = useState([])
+
+  useEffect(() => {
+    api.get('projects').then(({ data }) => {
+      setProjects(data)
+    })
+  }, [])
 
   /**
    * useState retorna um array com 2 posições
@@ -27,10 +28,8 @@ export default function App () {
   return (
     <>
       <Header title="Projects" />
-
-      <img width={500} src={backgroundImage} />
       <ul>
-        {projects.map(project => <li key={project}>{project}</li>)}
+        {projects.map(project => <li key={project.id}>{project.title}</li>)}
       </ul>
       <button type="button" onClick={handleAddProject}>Adicionar Projeto</button>
     </>
