@@ -4,8 +4,19 @@ import Header from './Header'
 export default function App () {
   return (
     <>
-      <Header />
-      <Header />
+      <Header title="HomePage" >
+        <ul>
+          <li>Homepage</li>
+          <li>Projetos</li>
+        </ul>
+      </Header>
+      <Header title="Projects" >
+        <ul>
+          <li>Homepage</li>
+          <li>Projetos</li>
+          <li>Login</li>
+        </ul>
+      </Header>
     </>
   )
 }
