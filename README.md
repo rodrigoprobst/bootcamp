@@ -18,8 +18,9 @@ Cada vídeo aula vou fazer uma nova branch para que tenha fácil acesso ao hist�
 
 A cada desafio concluído, vou criar uma nova tag para facilitar ainda mais o acesso ao código fonte em diferentes períodos de tempo
 
-Essa tag eu vou dar merge na master para poder enviar os desafios (desta forma minha master vai ter os desafios versionados)
 
 ## Os Desafios 
 
-Os desafios estarão dentro de seu respoectivo módulo com o nome do desafio no diretório.
+Após criação da tag do desafio, vou dar merge na master para poder enviar os mesmos para correção (desta forma minha master vai ter os desafios versionados)
+
+Após o merge na master, os desafios estarão dentro de seu respectivo módulo com o nome do desafio no diretório.
