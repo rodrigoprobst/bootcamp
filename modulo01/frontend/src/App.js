@@ -20,9 +20,18 @@ export default function App () {
    * 2. Função para atualizarmos esse valor
    */
 
-  function handleAddProject() {
+  async function handleAddProject() {
     // projects.push(`Novo Projeto ${Date.now()}`)
-    setProjects([...projects, `Novo Projeto ${Date.now()}`])
+    // setProjects([...projects, `Novo Projeto ${Date.now()}`])
+    const reponse = await api.post('projects', {
+      title: `Novo Projeto ${Date.now()}`,
+      owner: "Rodrigo"
+    })
+
+    const project = reponse.data
+
+    setProjects([...projects, project])
+    
   }
 
   return (
